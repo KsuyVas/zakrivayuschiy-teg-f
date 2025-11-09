@@ -58,8 +58,6 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 text-transform: uppercase;
 color: var(--main-color, #000);
 text-align: center;
-
-
 }
 
 
@@ -99,7 +97,6 @@ border: 2px solid var(--main-color, #000);
   object-position: right;
   mix-blend-mode: hard-light;
   aspect-ratio: 1 / 1;  
-
 }
 
 
@@ -107,10 +104,8 @@ border: 2px solid var(--main-color, #000);
 
 .box-image {
   position: relative;
-
-   display: grid;
+  display: grid;
   width: 100%;
-  /* aspect-ratio: 1 / 1; */
   border: 2px solid var(--main-color);
   border-top: none;
   background-color: #fff;
@@ -118,7 +113,7 @@ border: 2px solid var(--main-color, #000);
 }
 
 .label {
-    font-family: var(--accent-font);
+  font-family: var(--accent-font);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -128,8 +123,15 @@ border: 2px solid var(--main-color, #000);
   right: 25px;
   top: 19px;
   text-shadow: 0 0 1px var(--background-color);
-  /* opacity: 0.5; */
+  
 
+}
+
+@supports((text-stroke: var(--stroke-color)) or (-webkit-text-stroke: 1px var(--stroke-color))) {
+  .label {
+    -webkit-text-stroke: 1px var(--stroke-color);
+    text-shadow: none;
+  }
 }
 
 
@@ -148,8 +150,14 @@ color: var(--main-color, #000);
 padding: 25px;
 }
 
+
+
+
 .buttons {
-align-self: flex-end;
+  align-self: flex-end;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 5px;
 }
 
 .button {
@@ -157,7 +165,13 @@ align-self: flex-end;
   background-color: var(--background-color);
   border: 2px solid var(--main-color);
   cursor: pointer;
+  transition: 0.3s ease;
+  position: relative;
 } 
+
+
+
+
 
 .card__like-button {
   background-color: var(--background-color);
@@ -173,8 +187,25 @@ font-family: var(--accent-font), sans-serif;
 font-weight: 400;
 font-size: 14px;
 line-height: 90%;
-color: var(--main-color, #000);
+color: var(--stroke-color, #fff);
+mix-blend-mode: difference;
+
+
+position: relative;
+  z-index: 2;
 }
+
+
+
+
+
+.save-icon {
+  
+  mix-blend-mode: difference;
+   position: relative;
+  z-index: 2;
+}
+
 
 
 .footer {
@@ -185,3 +216,176 @@ color: var(--main-color, #000);
   min-width: 335px;
   min-height: 55px;
 }
+
+
+.dialog-save {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  background-color: var(--background-color);
+  border: 2px solid var(--main-color);
+  padding: 0;
+}
+
+.form-dialog {
+  display: grid;
+  padding: 30px 40px;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "icon text"
+    "butt butt";
+  gap: 30px 20px;
+}
+
+.dialog-save:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.dialog-save .save-icon {
+  grid-area: icon;
+  width: 21px;
+  height: 21px;
+}
+
+.dialog-save .button {
+  grid-area: butt;
+  color: var(--button-text-color);
+  /* mix-blend-mode: difference; */
+  padding: 9px 17px;
+  text-transform: uppercase;
+}
+
+.doalog-text {
+  color: var(--main-color);
+
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 21px */
+  text-transform: uppercase;
+  grid-area: text;
+  max-width: 234px;
+}
+
+.dialog-save::backdrop {
+  opacity: 0.75;
+  background: #000;
+}
+
+.card__icon-button {
+  border: none;
+  background-color: var(--background-color);
+  transition: 0.3s ease;
+  width: 38PX;
+  height: 38PX;
+}
+
+.like-icon {
+  position: relative;
+  left: -5px;   /* возможно тут нужно как-то подругому выровнить свн внутри кнопки*/
+}
+
+.button:focus, .card__icon-button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0px 0px var(--main-color);
+  transition: 0.3s ease;
+}
+
+
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--main-color);
+  transition: 0.3s ease;
+}
+
+
+.button::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--main-color);
+  transform-origin: 0 0;
+  transition: 0.5s ease-in-out;
+  transform: scale(0,1);
+}
+
+.button:hover::before {
+  transform: scale(1,1);
+  transition: 0.5s ease-in-out;
+}
+
+.button:hover {
+  color: var(--background-color);
+  border: 2px solid var(--main-color);
+}
+
+
+@media (width <= 375px) {
+
+
+  .header {
+    padding: 122px 16px;
+  }
+
+    .button_save {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 306px;
+    min-height: 84px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+  .save-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  
+}
+
+
+/* СТИИЛИ ДЛЯ РЕАЛИЗАЦИИ анимации КНОПКИ с сердечком*/
+
+.like-icon {
+
+}
+
+.card__icon-button {
+
+}
+
+
+.heart {
+
+}
+
+.contour {
+
+}
+
+.main-body {
+
+}
+
+.core {
+
+}
+
+.sparks {
+
+}
+
