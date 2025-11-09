@@ -25,7 +25,6 @@
   
   background-color: #ffffff;
   margin-block-start: 100px;
-  margin-block-end: 100px;
   padding: 130px 122.5px;
   border: 2px solid #000;
   margin-block-end: 98px;
@@ -72,11 +71,12 @@ gap: 52px;
 
 .card {
   background-color: var(--background-color, #fff);
+  border: 2px solid #000;
 
 }
 
 .card-title {
-  background-color: var(--background-color, #fff);
+background-color: var(--background-color, #fff);
 font-weight: 715;
 font-size: 18px;
 color: var(--main-color, #000);
@@ -86,20 +86,49 @@ font-variation-settings: 'wght' var(--font-title-weight);
 line-height: normal;
 padding: 4px 10px 6px 10px;
 border: 2px solid var(--main-color, #000);
- font-size: 18px;
 }
 
 
 .card-image {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-  object-position: right;
-  mix-blend-mode: hard-light;
-  aspect-ratio: 1 / 1;  
+ object-fit: cover;
+ height: 100%;
+ width: 100%;
+ object-position: right;
+ mix-blend-mode: hard-light;
+ aspect-ratio: 1 / 1;  
 }
 
+.card-image-start {
+filter: brightness(200%);
+}
 
+.card-image-first-sprint {
+  filter: contrast(20%);
+}
+
+.card-image-first-sprint-two {
+  filter: blur(3.2rem);
+}
+
+.card-image-second-sprint {
+  filter: opacity(0.8);
+}
+
+.card-image-second-sprint-two {
+  filter: grayscale(0.8);
+}
+
+.card-image-third-sprint {
+   filter: saturate(158%);
+}
+
+.card-image-third-sprint-two {
+  filter: sepia(80%);
+}
+
+.card-image-now {
+   filter: invert(0.7) sepia(1) contrast(2) brightness(200%);;
+}
 
 
 .box-image {
