@@ -40,7 +40,7 @@ width: clamp(375px, 100%, 700px);
 }
 
 .logo {
-  font-weight: 400;
+font-weight: 400;
 font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem); /* 65px узнать как пользоваться!!  clamp(2.722rem, 2.409rem + 1.502vi, 3.611rem);   */
 text-transform: uppercase;
 color: var(--main-color, #000);
@@ -281,7 +281,7 @@ position: relative;
 .dialog-save .button {
   grid-area: butt;
   color: var(--button-text-color);
-  /* mix-blend-mode: difference; */
+  
   padding: 9px 17px;
   text-transform: uppercase;
 }
@@ -294,7 +294,7 @@ position: relative;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
-  /* 21px */
+  
   text-transform: uppercase;
   grid-area: text;
   max-width: 234px;
