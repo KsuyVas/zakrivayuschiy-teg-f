@@ -64,7 +64,7 @@ text-align: center;
 
 display: flex;
 flex-direction: column;
-gap: 52px;
+gap: 50px;
 }
 
 
@@ -95,7 +95,7 @@ border: 2px solid var(--main-color, #000);
  width: 100%;
  object-position: right;
  mix-blend-mode: hard-light;
- aspect-ratio: 1 / 1;  
+ aspect-ratio: 1/1;
 }
 
 .card-image-start {
