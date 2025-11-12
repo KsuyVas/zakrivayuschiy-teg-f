@@ -13,6 +13,12 @@
     --animation-fill-color: #FF0000;
     --stroke-color: #FFFFFF;
 
+/* 
+
+    --breakpoint: 375px;
+    --breakpoint-simulation: (100vw - var(--breakpoint)); */
+
+
 
     
 
