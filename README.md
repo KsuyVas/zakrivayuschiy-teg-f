@@ -1,1 +1,1 @@
-git@github.com:KsuyVas/zakrivayuschiy-teg-f.git
+https://github.com/KsuyVas/zakrivayuschiy-teg-f
