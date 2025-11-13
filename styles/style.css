@@ -29,7 +29,7 @@
   border: 2px solid #000;
   margin-block-end: 98px;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   gap: 20px;
 }
 
@@ -55,7 +55,7 @@ margin-block-start: 8px;
 .main-tittle {
   font-family: var(--accent-font,'PressStar2P'), sans-serif;
   font-weight: 400;
-font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);   
+font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 text-transform: uppercase;
 color: var(--main-color, #000);
 text-align: center;
