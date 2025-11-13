@@ -48,6 +48,7 @@ color: var(--main-color, #000);
 font-family: var(--accent-font, 'PressStar2P'), sans-serif;
 text-decoration: none;
 text-align: center;
+margin-block-start: 8px;
 
 }
 
@@ -58,13 +59,15 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 text-transform: uppercase;
 color: var(--main-color, #000);
 text-align: center;
+
+margin-block-end: 6px;
 }
 
 
 .cards {
 display: flex;
 flex-direction: column;
-gap: 50px;
+gap: 52px;
 }
 
 
@@ -86,6 +89,7 @@ font-variation-settings: 'wght' var(--font-title-weight, 715);
 line-height: normal;
 padding: 4px 10px 6px 10px;
 border-bottom: 2px solid var(--main-color, #000);
+margin-block-end: -3px;
 }
 
 
@@ -150,7 +154,7 @@ filter: brightness(200%);
   text-transform: uppercase;
   position: absolute;
   right: 25px;
-  top: 19px;
+  top: 26px;
   text-shadow: 0 0 1px var(--background-color, #fff);
   
 
@@ -394,6 +398,14 @@ align-self: center;
   padding: 12.5px 116.5px;
   
   max-width: 261px;
+}
+
+.logo {
+  margin-block-start: 0px;
+}
+
+.main-tittle {
+      margin-block-end: 0px;
 }
   
 }
